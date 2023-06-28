@@ -1,0 +1,77 @@
+.header {
+    background-color: transparent;
+    padding: 1em 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.header-logo {
+    font-size: 1.2rem;
+    color: #353535;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > svg {
+        font-size: 1.8rem;
+        margin-right: 1em;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(90deg); }
+}
+  
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.faXmark {
+    animation: spin .3s ease-in-out;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.faBarsStaggered {
+    animation: fade .3s ease-in-out;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.header-links {
+    padding-top: 3em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f6f3f9;
+    position: fixed;
+    z-index: 1;
+    animation: fade .3s ease-in-out;
+    transition: all .5s ease-in-out;
+    & .nav-links-central, .nav-links-right {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        & .link {
+            color: #353535;
+            padding: .6em 0;
+            font-size: 1.5rem;
+            font-weight: 400;
+            position: relative;
+        }
+        & :hover {
+            color: #42146a;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all .3s ease-in-out;
+        }   
+    }
+}
