@@ -9,24 +9,15 @@ const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    // const [prevScrollPos, setPrevScrollPos] = useState(0);
 
     const handleOpenMenu = () => {
         setIsOpen(!isOpen);
     };
 
     const handleScroll = () => {
-        const offset = window.scrollY; //ScrollYOffset is the distance from the top of the page to the current scroll position
-        offset < 0 ? setScrolled(true) : setScrolled(false); //200 means the height of the header
-        
-        // setScrolled(prevScrollPos < offset); //prevScrollPos is the previous scroll position
-        // setPrevScrollPos(offset);
-
-        if (!scrolled) {
-            console.log("Scrolled negativo")
-        } else {
-            console.log("Scrolled positivo")
-        }
+        const currentScroll = window.pageYOffset;
+        const scrolled = currentScroll > 0;
+        setScrolled(scrolled);
     };
 
     useEffect(() => {
@@ -35,7 +26,7 @@ const Header = () => {
 
    return (
         <>
-            <div className={`${classes.header} ${scrolled ? classes.scrolled : classes.notscrolled}`}>
+            <div className={`${classes.header} ${scrolled ? classes.scrolled : ""}`}>
                 <div className={classes["header-logo"]}>
                     <Link to="/">
                     <FontAwesomeIcon icon={faListCheck} />
@@ -55,7 +46,7 @@ const Header = () => {
                 <FontAwesomeIcon icon={isOpen ? faXmark : faBarsStaggered} className={isOpen ? classes.faXmark : classes.faBarsStaggered} onClick = {handleOpenMenu}/>
             </div>
 
-            {isOpen ? (<div className={classes["header-menu"]}>
+            {isOpen ? (<div className={`${classes["header-menu"]} ${scrolled ? classes.scrolled : ""}`}>
                 <div className={classes["nav-links-central"]}>
                     <NavLink to="/" className={classes.link} onClick = {handleOpenMenu}>Home</NavLink>
                     <NavLink to="/about" className={classes.link} onClick = {handleOpenMenu}>About</NavLink>
