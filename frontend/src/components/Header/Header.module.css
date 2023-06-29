@@ -10,20 +10,22 @@
 }
 
 .header-logo {
+    font-family: "Quicksand", sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    & .logo {
+        width: 4em;
+        height: auto;
+        margin-right: 1em;
+    }
 
     & > a {
         text-decoration: none;
         display: flex;
         align-items: center;
         color: #353535;
-        
-        & > svg {
-            font-size: 2rem;
-            margin-right: 1em;
-        }
     }
 }
 

@@ -1,8 +1,9 @@
 import classes from './Header.module.css';
+import Logo from '../../assets/images/logo.png';
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBarsStaggered, faListCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBarsStaggered, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const Header = () => {
@@ -29,7 +30,7 @@ const Header = () => {
             <div className={`${classes.header} ${scrolled ? classes.scrolled : ""}`}>
                 <div className={classes["header-logo"]}>
                     <Link to="/">
-                    <FontAwesomeIcon icon={faListCheck} />
+                    <img src={Logo} alt="Logo" className={classes.logo}/>
                     <h1>Taskify</h1>
                     </Link>
                 </div>

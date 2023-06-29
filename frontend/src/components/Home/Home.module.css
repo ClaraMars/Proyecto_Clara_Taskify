@@ -1,7 +1,7 @@
 .home {
     width: 100vw;
     height: 100vh;
-    background-color: bisque;
+    background-color: rgb(240, 232, 255);
     z-index: 0;
     position: relative;
 }
