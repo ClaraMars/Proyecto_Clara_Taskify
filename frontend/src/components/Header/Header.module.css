@@ -8,16 +8,25 @@
 }
 
 .header-logo {
-    font-size: 1.2rem;
-    color: #353535;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    & > svg {
-        font-size: 1.8rem;
-        margin-right: 1em;
+    & > a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: #353535;
+        
+        & > svg {
+            font-size: 2rem;
+            margin-right: 1em;
+        }
     }
+}
+
+.header-links, .header-login {
+    display: none;
 }
 
 @keyframes spin {
@@ -38,13 +47,13 @@
 }
 
 .faBarsStaggered {
-    animation: fade .3s ease-in-out;
+    animation: fade .2s ease-in-out;
     font-size: 1.5rem;
     cursor: pointer;
     transition: all .5s ease-in-out;
 }
 
-.header-links {
+.header-menu {
     padding-top: 3em;
     display: flex;
     align-items: center;
@@ -56,10 +65,12 @@
     z-index: 1;
     animation: fade .3s ease-in-out;
     transition: all .5s ease-in-out;
+
     & .nav-links-central, .nav-links-right {
         text-align: center;
         display: flex;
         flex-direction: column;
+
         & .link {
             color: #353535;
             padding: .6em 0;
@@ -67,11 +78,123 @@
             font-weight: 400;
             position: relative;
         }
+
         & :hover {
             color: #42146a;
             cursor: pointer;
             font-weight: 500;
             transition: all .3s ease-in-out;
         }   
+    }
+}
+
+.contact-icons {
+    margin: 5em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .icons {
+        width: 2.5em;
+        height: 2.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        padding: .5em;
+        margin: 0 .8em;
+        font-size: 1.5rem;
+        color: #353535;
+        transition: all .2s ease-in-out;
+    }
+
+    & .icons:hover {
+        color: #42146a;
+        border: .5px solid #42146a;
+        background-color: #ece2f7;
+        transform: scale(1.2);
+        cursor: pointer;
+
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        background-color: transparent;
+        /* position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%; */
+        z-index: 1;
+    }
+
+    .scrolled {
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 1;
+    }
+
+    /* .notscrolled {
+        opacity: 0;
+    } */
+
+    .faBarsStaggered, .faXmark {
+        display: none;
+    }
+    
+    .header-links, .header-login {
+        display: flex;
+        align-items: center;
+        
+        & > a {
+            color: #353535;
+            padding: 0 1.5em;
+            font-size: 1rem;
+        }
+
+        /* & a.active {
+            TO DO
+        } */
+
+        & .login {
+            font-weight: 600;
+        }
+
+        & .signup {
+            background-color: #63146a;
+            border: 1px solid transparent;
+            color: #fff;
+            padding: .5em 1.5em;
+            border-radius: .3rem;
+            font-weight: 500;
+            transition: all .3s ease-in-out;
+        }
+
+        & .signup:hover {
+            background-color: #ece2f7;
+            border: 1px solid #63146a;
+            color: #36146a;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header-links a, .header-login a {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .header {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .header-logo, .header-links, .header-login {
+        font-size: 1.7rem;
     }
 }

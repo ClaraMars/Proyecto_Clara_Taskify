@@ -1,16 +1,65 @@
 :root {
+    box-sizing: border-box;
     font-size: .785rem;
-    --primary-color: #f5f5f5;
-    --secondary-color: #f5f5f5;
+    /* Colors */
 
 }
 
-*, *::after, *::before {
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+*, 
+::before, 
+::after {
+    box-sizing: inherit;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: none 0;
+    list-style: none;
+    text-decoration: none;
+    -ms-user-select: none; /* IE 10+ */
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none; /* Disable text selection */
     /* font-family: 'Open Sans', sans-serif; */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-y: scroll;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
 }
 
 a {
     text-decoration: none;
 }
+
+h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.25rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  h4 {
+    font-size: 1.1rem;
+  }
+  
+  h5 {
+    font-size: 0.9rem;
+  }
+  
+  h6 {
+    font-size: 0.7rem;
+  }
