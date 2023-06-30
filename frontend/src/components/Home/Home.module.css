@@ -1,7 +1,139 @@
 .home {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(240, 232, 255);
     z-index: 0;
     position: relative;
+    padding: 2em 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
 }
+
+.home-text, .home-image {
+    margin: 2em auto;
+}
+
+.home-text {
+    & h1 {
+        text-align: center;
+    }
+
+    & h3 {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 500;
+        padding: 1.5em 0 2.5em;
+        text-align: center;
+        line-height: 1.5em;
+    }
+
+    & .home-buttons {
+        display: flex;
+        justify-content: center;
+        
+        & > button {
+            font-family: "Montserrat", sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0 .5em;
+            padding: .5em 1.3em;
+            border-radius: .3rem;
+            border: 1px solid transparent;
+            background-color: var(--white);
+        }
+
+        & > button:last-of-type {
+            background-color: var(--purple-buttons);
+            
+            & > a {
+                color: var(--white);
+            }
+            
+            &:hover {
+                cursor: pointer;
+                background-color: var(--light-purple);
+                border: 1px solid var(--purple-buttons);
+
+                & > a {
+                    color: var(--purple-buttons);
+                }
+            }
+        }
+    }
+}
+
+.home-image {
+    margin-bottom: 10em;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .home {
+        flex-direction: row;
+        padding: 2em 0 2em 3em;
+    }
+    
+    .home-text {
+        width: 50%;
+        padding: 0 .5em;
+        
+        & h1 {
+            font-size: 2.4rem;
+            text-align: left;
+        }
+        
+        & h3 {
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        & .home-buttons {
+            justify-content: flex-start;
+        }
+    }
+
+    .home-image {
+        margin: 0;
+        width: 50%;
+
+        & img {
+            width: 100%;
+        }
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .home {
+        padding: 2em 1.5em;
+
+        & .home-text {
+            padding: 3em 2em;
+
+            & h1 {
+                font-size: 3rem;
+            }
+
+            & h3 {
+                font-size: 1.5rem;
+            }
+
+            & .home-buttons {
+                font-size: 1.5rem;
+                justify-content: space-evenly;
+            }
+        }
+
+        & .home-image {
+            padding: 2em 0;
+        }
+    }
+}
+
+/* @media screen and (min-width: 1280px) {
+
+} */
+
+
+

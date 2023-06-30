@@ -31,12 +31,12 @@ const Header = () => {
                 <div className={classes["header-logo"]}>
                     <Link to="/">
                     <img src={Logo} alt="Logo" className={classes.logo}/>
-                    <h1>Taskify</h1>
+                    <h2>Taskify</h2>
                     </Link>
                 </div>
                 <div className={classes["header-links"]}>
                     <NavLink to="/" activeClassName={classes.active} >Home</NavLink>
-                    <NavLink to="/about" activeClassName={classes.active} >About</NavLink>
+                    <NavLink to="/about" activeClassName={classes.active} >About us</NavLink>
                     <NavLink to="/contact" activeClassName={classes.active} >Contact</NavLink>
                 </div>
                 <div className={classes["header-login"]}>
