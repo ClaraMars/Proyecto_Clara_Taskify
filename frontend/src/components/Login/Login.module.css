@@ -6,22 +6,27 @@
     justify-content: center;
 
     & > form {
-
-        /* width: 50%; */
         margin: 3em auto;
         padding: 2em;
-        background-color: var(--light-purple-buttons);
+        /* background-color: var(--light-purple-buttons); */
+        background-color: var(--light-yellow);
         border-radius: .5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         
         & > input {
             font-family: "Montserrat", sans-serif;
             margin: .5em 0;
             padding: .5em;
             width: 90%;
+            border: 1px solid transparent;
             border-radius: .5rem;
+
+            &:hover, &:focus {
+                border: 1px solid var(--dark-gray);
+            }
         }
         
         & > label {
@@ -38,38 +43,49 @@
         
         & > button {
             font-family: "Montserrat", sans-serif;
+            font-weight: 600;
             padding: .5em 1em;
             margin: 1em 0;
             border-radius: .5rem;
             background-color: var(--dark-purple);
             color: var(--white);
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                background-color: var(--purple-buttons);
+                cursor: pointer;
+                transform: scale(1.05);
+            }
         }
         
         & > p {
             font-size: .85rem;
+
+            & > a {
+                color: var(--dark-purple);
+                text-decoration: underline;
+            }
         }
     }
 
-    & > img {
+    & .loginImage {
         display: none;
     }
-    /* & > img {
-        padding: 2em;
-        width: 90%;
-    } */
 }
 
 @media screen and (min-width: 768px) {
     .login {
         flex-direction: row;
+        justify-content: space-around;
 
         & > form {
             width: 50%;
+            margin: 0 2em;
         }
 
-        & > img {
-            width: 50%;
-            padding: 2em;
+        & .loginImage {
+            width: 25%;
+            margin: 0 2em;
             display: block;
         }
     }
@@ -77,4 +93,14 @@
 
 @media screen and (min-width: 992px) {}
 
-@media screen and (min-width: 1280px) {}
+@media screen and (min-width: 1280px) {
+    .login {
+        & > form {
+            max-width: 40%;
+        }
+
+        & .loginImage {
+            max-width: 20%;
+        }
+    }
+}
