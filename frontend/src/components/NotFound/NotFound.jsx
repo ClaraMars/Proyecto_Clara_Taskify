@@ -2,9 +2,9 @@ import classes from './NotFound.module.css';
 
 const NotFound = () => {
    return (
-       <div className={classes.notfound}>
-           NOT FOUND
-       </div>
+       <p className={classes.notfound}>
+           Something went wrong. Please try again later.
+       </p>
     );
 }
 
