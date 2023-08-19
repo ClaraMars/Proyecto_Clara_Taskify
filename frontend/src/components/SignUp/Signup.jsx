@@ -1,15 +1,20 @@
-import classes from "./Login.module.css";
-import LoginImage from "../../assets/images/image1.png";
+import classes from "./Signup.module.css";
+import SignUpImage from "../../assets/images/image1.png";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const SignUp = () => {
   return (
-    <div className={classes.login}>
-      <div className={classes.loginImage}>
-        <img src={LoginImage} alt="" />
+    <div className={classes.SignUp}>
+      <div className={classes.SignUpImage}>
+        <img src={SignUpImage} alt="" />
       </div>
       <form>
-        <input type="text" placeholder="Introduce your email" name="email" />
+        <input
+          type="text"
+          placeholder="Introduce your username"
+          name="username"
+        />
+        <input type="email" placeholder="Introduce your email" name="email" />
         <input
           type="password"
           placeholder="Introduce your password"
@@ -28,4 +33,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

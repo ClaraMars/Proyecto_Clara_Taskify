@@ -1,4 +1,4 @@
-.login {
+.SignUp {
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -69,13 +69,13 @@
     }
   }
 
-  & .loginImage {
+  & .SignUpImage {
     display: none;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .login {
+  .SignUp {
     flex-direction: row;
     justify-content: space-around;
 
@@ -84,7 +84,7 @@
       margin: 0 2em;
     }
 
-    & .loginImage {
+    & .SignUpImage {
       width: 25%;
       margin: 0 2em;
       display: block;
@@ -96,14 +96,14 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .login {
+  .SignUp {
     justify-content: space-evenly;
     & > form {
       width: 35%;
       max-width: 40%;
     }
 
-    & .loginImage {
+    & .SignUpImage {
       width: 20%;
       max-width: 20%;
     }
