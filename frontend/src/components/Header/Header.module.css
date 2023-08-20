@@ -1,185 +1,200 @@
 .header {
-    background-color: transparent;
-    padding: 1em 1.5em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
-    width: 100vw;
-    transition: all .2s ease-in-out;
+  background-color: transparent;
+  padding: 0.3em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  width: 100vw;
+  transition: all 0.2s ease-in-out;
 }
 
 .header-logo {
-    font-family: "Quicksand", sans-serif;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .logo {
+    width: 3.5em;
+    height: auto;
+    margin-right: 1em;
+  }
+
+  & > a {
+    text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    & .logo {
-        width: 3.5em;
-        height: auto;
-        margin-right: 1em;
-    }
-
-    & > a {
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-    }
+  }
 }
 
-.header-links, .header-login {
-    display: none;
+.header-links,
+.header-login {
+  display: none;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(90deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
 }
-  
+
 @keyframes fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .faXmark {
-    animation: spin .3s ease-in-out;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all .5s ease-in-out;
+  animation: spin 0.3s ease-in-out;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
 .faBarsStaggered {
-    animation: fade .2s ease-in-out;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all .5s ease-in-out;
+  animation: fade 0.2s ease-in-out;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
 .header-menu {
-    padding-top: 3em;
+  padding-top: 3em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  position: fixed;
+  z-index: 1;
+  animation: fade 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+  & .nav-links-central,
+  .nav-links-right {
+    text-align: center;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--white);
-    position: fixed;
-    z-index: 1;
-    animation: fade .3s ease-in-out;
-    transition: all .5s ease-in-out;
 
-    & .nav-links-central, .nav-links-right {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-
-        & .link {
-            padding: .6em 0;
-            font-size: 1.5rem;
-            font-weight: 400;
-            position: relative;
-        }
-
-        & :hover {
-            color: var(--purple-buttons);
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 1.6rem;
-            transition: all .3s ease-in-out;
-        }   
+    & .link {
+      padding: 0.6em 0;
+      font-size: 1.5rem;
+      font-weight: 400;
+      position: relative;
     }
+
+    & :hover {
+      color: var(--purple-buttons);
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1.6rem;
+      transition: all 0.3s ease-in-out;
+    }
+  }
 }
 
 .contact-icons {
-    margin: 5em auto;
+  margin: 5em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .icons {
+    width: 2.5em;
+    height: 2.5em;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
+    padding: 0.5em;
+    margin: 0 0.8em;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in-out;
+  }
 
-    & .icons {
-        width: 2.5em;
-        height: 2.5em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        padding: .5em;
-        margin: 0 .8em;
-        font-size: 1.5rem;
-        transition: all .2s ease-in-out;
-    }
-
-    & .icons:hover {
-        color: var(--purple-buttons);
-        border: .5px solid var(--purple-buttons);
-        background-color: var(--light-purple-buttons);
-        transform: scale(1.2);
-        cursor: pointer;
-    }
+  & .icons:hover {
+    color: var(--purple-buttons);
+    border: 0.5px solid var(--purple-buttons);
+    background-color: var(--light-purple-buttons);
+    transform: scale(1.2);
+    cursor: pointer;
+  }
 }
 
 .scrolled {
-    background-color: var(--white);
-    position: fixed;
-    z-index: 2;
-    transition: all .3s ease-in-out;
+  background-color: var(--white);
+  position: fixed;
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
-    .faBarsStaggered, .faXmark {
-        display: none;
-    }
-    
-    .header-links, .header-login {
-        display: flex;
-        align-items: center;
-        
-        & > a {
-            padding: 0 1.5em;
-            font-size: 1rem;
-        }
+  .faBarsStaggered,
+  .faXmark {
+    display: none;
+  }
 
-        /* & a.active {
+  .header-links,
+  .header-login {
+    display: flex;
+    align-items: center;
+
+    & > a {
+      padding: 0 1.5em;
+      font-size: 1rem;
+    }
+
+    /* & a.active {
             TO DO
         } */
 
-        & .login {
-            font-weight: 600;
-        }
-
-        & .signup {
-            background-color: var(--purple-buttons);
-            border: 1px solid transparent;
-            color: var(--white);
-            padding: .5em 1.5em;
-            border-radius: .3rem;
-            font-weight: 500;
-            transition: all .3s ease-in-out;
-        }
-
-        & .signup:hover {
-            background-color: var(--light-purple-buttons);
-            border: 1px solid var(--purple-buttons);
-            color: var(--purple-buttons);
-            cursor: pointer;
-        }
+    & .login {
+      font-weight: 600;
     }
+
+    & .signup {
+      background-color: var(--purple-buttons);
+      border: 1px solid transparent;
+      color: var(--white);
+      padding: 0.5em 1.5em;
+      border-radius: 0.3rem;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+    }
+
+    & .signup:hover {
+      background-color: var(--light-purple-buttons);
+      border: 1px solid var(--purple-buttons);
+      color: var(--purple-buttons);
+      cursor: pointer;
+    }
+  }
 }
 
 @media screen and (min-width: 992px) {
-    .header-links a, .header-login a {
-        font-size: 1.2rem;
-    }
+  .header-links a,
+  .header-login a {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-    /* .header {
+  /* .header {
         max-width: 1400px;
         margin: 0 auto;
     } */
 
-    .header-logo, .header-links, .header-login {
-        font-size: 1.7rem;
-    }
+  .header-logo,
+  .header-links,
+  .header-login {
+    font-size: 1.7rem;
+  }
 }
